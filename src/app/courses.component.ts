@@ -36,7 +36,7 @@ import { Component } from '@angular/core';
             Save
         </button><br/><br/>
         <!-- here we are binding keyup event -->
-        <input class="form-control" (keyup.enter)="onKeyPress()"/>
+        <input class="form-control" (keyup.enter)="onKeyPress($event)"/>
     `
 })
 
@@ -62,7 +62,7 @@ export class CoursesComponent {
         console.log('Binded click event', $event);
     }
 
-    onKeyPress() {
-        console.log('Enter was pressed');
+    onKeyPress($event) {
+        console.log($event.target.value);
     }
 }
