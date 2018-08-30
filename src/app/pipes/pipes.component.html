@@ -1,0 +1,8 @@
+<h1>{{title}}</h1>
+<!-- Here we are using pipes to format the result data -->
+{{course.title | uppercase | lowercase}}<br/> <!-- here we are using uppercase and lowercase pipes -->
+{{course.students | number}}<br/> <!-- here we are using number to format the number with commas -->
+{{course.releaseDate | date:'shortDate'}}<br/> <!-- here we are using date to format the date with attribute shortDate to give it a specific look -->
+{{course.rating | number:'1.2-2'}}<br/> <!-- here we are using number with parameters to format with number of symbols after commad and maximum number of sumbols -->
+{{course.price | currency:'AUD':false}}<br/> <!-- here we are using currency to format the price with attribute Currency symbol and false attribute to displat currency
+symbol -->

@@ -37,6 +37,12 @@ import { Component } from '@angular/core';
         </button><br/><br/>
         <!-- here we are binding keyup event -->
         <input class="form-control" (keyup.enter)="onKeyPress($event)"/>
+        <br/>
+        <!-- here the email id is a template variable -->
+        <input class="form-control" #email (keyup.enter)="onKeyUp(email.value)">
+        <br/>
+        <!-- Two way bindng, we use ngModel to make a two way binding -->
+        <input class="form-control" [(ngModel)]="email_second" (keyup.enter)="onKeyDo()">
     `
 })
 
@@ -47,6 +53,7 @@ export class CoursesComponent {
     imgUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png';
     colSpan = 2;
     isActive = true;
+    email_second = 'test@mail.com';
 
     courses;
 
@@ -64,5 +71,13 @@ export class CoursesComponent {
 
     onKeyPress($event) {
         console.log($event.target.value);
+    }
+
+    onKeyUp(email) {
+      console.log(email);
+    }
+
+    onKeyDo() {
+      console.log(this.email_second);
     }
 }
